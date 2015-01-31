@@ -9,15 +9,19 @@
 import UIKit
 import MobileCoreServices
 
-class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerViewDelegate,UINavigationControllerDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerViewDelegate,UINavigationControllerDelegate,UIPopoverPresentationControllerDelegate {
 
+    @IBOutlet weak var picBtn: UIButton!
     @IBOutlet weak var cameraBtn: UIButton!
     @IBOutlet weak var travelLine: UIWebView!
     @IBOutlet weak var bottomBar: UIView!
-    @IBOutlet var picCollectionView: UICollectionView!
-    let reusableCollectionCell="ScenaryCell"
-    var base64Array:[NSString]=[]
-    var picArray:[UIImage]=[]
+    //@IBOutlet var picCollectionView: UICollectionView!
+    //let reusableCollectionCell="ScenaryCell"
+    //@IBOutlet weak var picView: UIImageView!=UIImageView()
+    //var base64Array:[NSString]=[]
+    //var picArray:[UIImage]=[]
+    var base64Data:NSString=""
+    var picData:UIImage=UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +33,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
         var url:NSURL=NSURL(string: urlAddress)!
         var requestObj=NSURLRequest(URL: url)
         travelLine.loadRequest(requestObj)
-        
+        //picBtn.addTarget(self, action: "showPopover:", forControlEvents: UIControlEvents.TouchUpInside)
         cameraBtn.addTarget(self, action: "performCamera:", forControlEvents: UIControlEvents.TouchUpInside)
 //        cameraBtn.layer.backgroundColor=UIColor.whiteColor().CGColor
 //        cameraBtn.layer.borderWidth=1
 //        cameraBtn.layer.borderColor=UIColor.grayColor().CGColor
 //        cameraBtn.layer.cornerRadius=2.5
         bottomBar.alpha=0.8
-        picCollectionView.delegate=self
     }
-
+/*
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picArray.count
     }
@@ -59,7 +62,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
         
         return cell
     }
-    
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -94,11 +97,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
             //portrait
             scaledImage = Utility.scaleImageWith(image,newSize: Utility.getPortraitPicSize())
         }
-        picArray.append(scaledImage)
-        base64Array.append(Utility.UIImageToBase64(scaledImage))
+        //picArray.append(scaledImage)
+        //base64Array.append(Utility.UIImageToBase64(scaledImage))
+        picData=scaledImage
+        base64Data=Utility.UIImageToBase64(scaledImage)
         dispatch_async(dispatch_get_main_queue()) {
             // update some UI
-            self.picCollectionView.reloadData()
+            //self.picView.image=scaledImage
+            self.picBtn.setBackgroundImage(scaledImage, forState: UIControlState.Normal)
         }
     }
     
@@ -106,10 +112,44 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
         //picCollectionView.reloadData()
 //        picCollectionView.reloadInputViews()
        // picCollectionView.reloadSections(NSIndexSet(index: 0))
-        dispatch_async(dispatch_get_main_queue()) {
-            // update some UI
-            self.picCollectionView.reloadItemsAtIndexPaths(self.picCollectionView.indexPathsForVisibleItems())
-        }
+//        dispatch_async(dispatch_get_main_queue()) {
+//            // update some UI
+//            self.picCollectionView.reloadItemsAtIndexPaths(self.picCollectionView.indexPathsForVisibleItems())
+//        }
+    }
+    func showPopover(sender:UIButton){
+        /*
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SchedulePopoverStoryBoard" bundle:nil];
+        ScheduleOnCalendarViewController *viewControllerForPopover =
+        [sb instantiateViewControllerWithIdentifier:@"schedulePopup"];
+        viewControllerForPopover.date = dateStr;
+        viewControllerForPopover.customerId = [self.event stringCustomerID];//[NSString stringWithFormat:@"%@",[self.event numCustomerID]];
+        //UIPopoverController *popover;
+        self.popover = [[UIPopoverController alloc]
+        initWithContentViewController:viewControllerForPopover];
+        
+        [self.popover presentPopoverFromRect:CGRectMake(0,45, 1028 , 768)//anchor.frame
+        inView:self//anchor.superview
+        permittedArrowDirections:0 animated:YES];
+        
+*/
+/*
+        //PopupStoryBoard
+        var sb:UIStoryboard=UIStoryboard(name: "UploadInfoStoryboard", bundle: nil)
+        //UploadInfoViewController
+        var popVC:UploadInfoViewController=sb.instantiateViewControllerWithIdentifier("uploadPopover") as UploadInfoViewController
+        popVC.preferredContentSize=CGSizeMake(300, 300)
+        
+       
+        presentViewController(popVC, animated: true, completion: nil)
+*/
+    }
+//    func prepareForPopoverPresentation(popoverPresentationController: UIPopoverPresentationController) {
+//        popoverPresentationController.containerView=CGSizeMake(300, 300)
+//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destVC:PopoverViewController=segue.destinationViewController as PopoverViewController
+        destVC.preferredContentSize=CGSizeMake(300, 400)
     }
 }
 class ScenaryImgCell:UICollectionViewCell{

@@ -13,6 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var u_picTitle:NSString=""
+    var u_picDescr:NSString=""
+    var u_lat:NSString=""
+    var u_lng:NSString=""
+    var u_user:NSString=""
+    var u_date:NSString=""
+    var u_city:NSString=""
+    var u_site:NSString=""
+    var u_picture64:NSString=""
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
