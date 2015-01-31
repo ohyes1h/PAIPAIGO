@@ -23,6 +23,7 @@
 		2EE8BB881A7D291600FD78E6 /* UploadInfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8BB871A7D291600FD78E6 /* UploadInfoStoryboard.storyboard */; };
 		2EE8BB8A1A7D2B8D00FD78E6 /* UploadInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8BB891A7D2B8D00FD78E6 /* UploadInfoViewController.swift */; };
 		2EE8BB901A7D3BB900FD78E6 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8BB8F1A7D3BB900FD78E6 /* PopoverViewController.swift */; };
+		2EE8BB941A7D69C400FD78E6 /* httpPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8BB931A7D69C400FD78E6 /* httpPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		2EE8BB871A7D291600FD78E6 /* UploadInfoStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UploadInfoStoryboard.storyboard; sourceTree = "<group>"; };
 		2EE8BB891A7D2B8D00FD78E6 /* UploadInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadInfoViewController.swift; sourceTree = "<group>"; };
 		2EE8BB8F1A7D3BB900FD78E6 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		2EE8BB931A7D69C400FD78E6 /* httpPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = httpPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				2EE8BB871A7D291600FD78E6 /* UploadInfoStoryboard.storyboard */,
 				2EE8BB8F1A7D3BB900FD78E6 /* PopoverViewController.swift */,
 				2EE8BB851A7CEE4D00FD78E6 /* Utility.swift */,
+				2EE8BB931A7D69C400FD78E6 /* httpPost.swift */,
 				2EE8BB5E1A7CCFD300FD78E6 /* Images.xcassets */,
 				2EE8BB601A7CCFD300FD78E6 /* LaunchScreen.xib */,
 				2EE8BB551A7CCFD300FD78E6 /* Supporting Files */,
@@ -255,6 +258,7 @@
 				2EE8BB901A7D3BB900FD78E6 /* PopoverViewController.swift in Sources */,
 				2EE8BB581A7CCFD300FD78E6 /* AppDelegate.swift in Sources */,
 				2EE8BB861A7CEE4D00FD78E6 /* Utility.swift in Sources */,
+				2EE8BB941A7D69C400FD78E6 /* httpPost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +456,7 @@
 				2EE8BB731A7CCFD400FD78E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EE8BB741A7CCFD400FD78E6 /* Build configuration list for PBXNativeTarget "HackathonTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +465,7 @@
 				2EE8BB761A7CCFD400FD78E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

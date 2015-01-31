@@ -30,6 +30,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNY-LO-QTN">
+                                <rect key="frame" x="277" y="202" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -41,6 +47,7 @@
                     <connections>
                         <outlet property="descrText" destination="iDc-6s-4Jy" id="Igs-a2-5R0"/>
                         <outlet property="titleText" destination="fdO-7U-i9T" id="HvN-mu-ien"/>
+                        <outlet property="uploadBtn" destination="wNY-LO-QTN" id="QgT-nY-sgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAH-gP-oOP" userLabel="First Responder" sceneMemberID="firstResponder"/>

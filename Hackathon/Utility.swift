@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 class Utility {
+    class var serviceUrl:NSString{
+        return "http://demo.innstory.com/mservice.php"
+    }
+    
+    
     class func scaleImageWith(image:UIImage, newSize:CGSize)->UIImage{
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
@@ -36,5 +41,28 @@ class Utility {
         var imageData=UIImagePNGRepresentation(image)
         let base64String:String=imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(0))
         return base64String
+    }
+    class func composeJson()->NSDictionary{
+        let delegate=UIApplication.sharedApplication().delegate as AppDelegate
+        var payload:NSDictionary=["filename":delegate.u_filename,
+                                "date":delegate.u_date,
+                                "city":delegate.u_city,
+                                "site":delegate.u_site,
+                                "title":delegate.u_picTitle,
+                                "desciption":delegate.u_picDescr,
+                                "picture":delegate.u_picture64,
+                                "lon":delegate.u_lng,
+                                "lat":delegate.u_lat] as NSDictionary
+        var json:NSDictionary=["user":delegate.u_user,
+                            "payload":[payload] as NSArray] as NSDictionary
+        return json
+    }
+    class func dateToString(date:NSDate) -> NSString {
+        let dateFormatter:NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        var string:NSString = dateFormatter.stringFromDate(date)
+        
+        return string
     }
 }

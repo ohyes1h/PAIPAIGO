@@ -22,7 +22,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
     //var picArray:[UIImage]=[]
     var base64Data:NSString=""
     var picData:UIImage=UIImage()
-    
+    var delegate=UIApplication.sharedApplication().delegate as AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -101,6 +101,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
         //base64Array.append(Utility.UIImageToBase64(scaledImage))
         picData=scaledImage
         base64Data=Utility.UIImageToBase64(scaledImage)
+        delegate.u_picture64=base64Data
+        delegate.u_filename="file1"
+        delegate.u_city="Taipei"
+        
+        
+        
         dispatch_async(dispatch_get_main_queue()) {
             // update some UI
             //self.picView.image=scaledImage
