@@ -102,7 +102,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
         picData=scaledImage
         base64Data=Utility.UIImageToBase64(scaledImage)
         delegate.u_picture64=base64Data
-        delegate.u_filename="file1"
+        delegate.u_filename="file1.jpg"
         delegate.u_city="Taipei"
         
         
@@ -111,7 +111,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
             // update some UI
             //self.picView.image=scaledImage
             self.picBtn.setBackgroundImage(scaledImage, forState: UIControlState.Normal)
+            
         }
+        self.performSegueWithIdentifier("infoSegue", sender: self)
     }
     
     @IBAction func test(sender: UIButton) {

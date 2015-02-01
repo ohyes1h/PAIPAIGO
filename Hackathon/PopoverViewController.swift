@@ -20,6 +20,8 @@ class PopoverViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         uploadBtn.addTarget(self, action: "performUpload:", forControlEvents: UIControlEvents.TouchUpInside)
+        println("width:\(self.presentingViewController?.preferredContentSize.width)")
+        
     }
     func performUpload(sender:UIButton){
         let date:NSDate=NSDate()
