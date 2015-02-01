@@ -28,17 +28,40 @@ class PopoverViewController: UIViewController {
         delegate.u_picDescr=descrText.text
         delegate.u_user="User1"
         delegate.u_site="Site"
+        delegate.u_city="台北市"
         
-        var dict:NSDictionary=Utility.composeJson()
-        var param:NSString="\(dict)"
+        //var dict:NSDictionary=Utility.composeJson()
+        //var param:NSString="\(dict)"
+        var param:NSString=Utility.composeJson()
         println(param)
-        httpPost.post(param, url: Utility.serviceUrl)
+        //httpPost.post(param, url: Utility.serviceUrl)
+        /*
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        NSDictionary *parameters = @{@"foo": @"bar"};
+        [manager POST:@"http://example.com/resources.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+        }];
+        */
+        
+        var manager:AFHTTPRequestOperationManager=AFHTTPRequestOperationManager()
+        manager.responseSerializer.acceptableContentTypes = NSSet(objects: "text/html")//"text/html")//multipart/form-data
+        let parameters:NSDictionary=["UPLOAD":param] as NSDictionary
+        
+        manager.POST(Utility.serviceUrl, parameters: parameters, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+            println("JSON: "+responseObject.description)
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        })
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

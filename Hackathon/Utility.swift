@@ -42,21 +42,53 @@ class Utility {
         let base64String:String=imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(0))
         return base64String
     }
-    class func composeJson()->NSDictionary{
+    class func composeJson()->NSString{
         let delegate=UIApplication.sharedApplication().delegate as AppDelegate
-        var payload:NSDictionary=["filename":delegate.u_filename,
-                                "date":delegate.u_date,
-                                "city":delegate.u_city,
-                                "site":delegate.u_site,
-                                "title":delegate.u_picTitle,
-                                "desciption":delegate.u_picDescr,
+        var payload:NSDictionary=["filename":"\(delegate.u_filename)",
+                                "date":"\(delegate.u_date)",
+                                "city":"\(delegate.u_city)",
+                                "site":"\(delegate.u_site)",
+                                "title":"\(delegate.u_picTitle)",
+                                "desciption":"\(delegate.u_picDescr)",
                                 "picture":delegate.u_picture64,
                                 "lon":delegate.u_lng,
                                 "lat":delegate.u_lat] as NSDictionary
-        var json:NSDictionary=["user":delegate.u_user,
+        var json:NSDictionary=["user":"\(delegate.u_user)",
                             "payload":[payload] as NSArray] as NSDictionary
-        return json
+        //var json:AnyObject=["user":"\(delegate.u_user)","payload":payload]
+        //let jsonString=JSONStringify(json)
+        var error: NSError?
+        let jsonData=NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.PrettyPrinted, error: &error)
+        if let err=error{
+            let jstr:NSString=NSString(data: jsonData!, encoding: NSUTF8StringEncoding)!
+            return jstr
+        }else{
+            let jstr:NSString=NSString(data: jsonData!, encoding: NSUTF8StringEncoding)!
+            return jstr
+        }
+        
+        //return ""
     }
+    func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> String {
+        var options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
+        if NSJSONSerialization.isValidJSONObject(value) {
+            if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: nil) {
+                if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                    return string
+                }
+            }
+        }
+        return ""
+    }
+    
+    /*
+    *  Usage
+    */
+    
+    
+    //let jsonString = JSONStringify(jsonObject)
+    //println(jsonString)
+    
     class func dateToString(date:NSDate) -> NSString {
         let dateFormatter:NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
