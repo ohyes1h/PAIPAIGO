@@ -35,11 +35,18 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
         travelLine.loadRequest(requestObj)
         //picBtn.addTarget(self, action: "showPopover:", forControlEvents: UIControlEvents.TouchUpInside)
         cameraBtn.addTarget(self, action: "performCamera:", forControlEvents: UIControlEvents.TouchUpInside)
+        picBtn.layer.cornerRadius=2.5
 //        cameraBtn.layer.backgroundColor=UIColor.whiteColor().CGColor
 //        cameraBtn.layer.borderWidth=1
 //        cameraBtn.layer.borderColor=UIColor.grayColor().CGColor
 //        cameraBtn.layer.cornerRadius=2.5
         bottomBar.alpha=0.8
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receiveNotification:", name:"doRefresh", object: nil)
+    }
+    @objc func receiveNotification(notification: NSNotification){
+        travelLine.reload()
+        picBtn.setBackgroundImage(nil, forState: UIControlState.Normal)
     }
 /*
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

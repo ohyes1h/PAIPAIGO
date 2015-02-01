@@ -14,6 +14,8 @@ class PopoverViewController: UIViewController {
     @IBOutlet weak var titleText: UITextField!
 
     @IBOutlet weak var descrText: UITextView!
+    
+    @IBOutlet weak var timeLabel:UILabel!=UILabel()
     var delegate=UIApplication.sharedApplication().delegate as AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +24,16 @@ class PopoverViewController: UIViewController {
         uploadBtn.addTarget(self, action: "performUpload:", forControlEvents: UIControlEvents.TouchUpInside)
         println("width:\(self.presentingViewController?.preferredContentSize.width)")
         
+        timeLabel.text=Utility.dateToString(NSDate())
+        delegate.u_date=timeLabel.text!
+        
     }
     func performUpload(sender:UIButton){
         let date:NSDate=NSDate()
         delegate.u_date=Utility.dateToString(date)
         delegate.u_picTitle=titleText.text
         delegate.u_picDescr=descrText.text
-        delegate.u_user="User1"
+        delegate.u_user="Alex"
         delegate.u_site="Site"
         delegate.u_city="台北市"
         
@@ -54,6 +59,9 @@ class PopoverViewController: UIViewController {
         manager.POST(Utility.serviceUrl, parameters: parameters, success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
             println("JSON: "+responseObject.description)
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("doRefresh", object:nil, userInfo:nil)
             }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("Error: " + error.localizedDescription)
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
