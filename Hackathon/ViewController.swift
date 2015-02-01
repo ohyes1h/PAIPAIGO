@@ -40,7 +40,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UIPickerV
 //        cameraBtn.layer.borderWidth=1
 //        cameraBtn.layer.borderColor=UIColor.grayColor().CGColor
 //        cameraBtn.layer.cornerRadius=2.5
-        bottomBar.alpha=0.8
+        bottomBar.alpha=0.9
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "receiveNotification:", name:"doRefresh", object: nil)
     }
