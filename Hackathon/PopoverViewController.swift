@@ -40,7 +40,7 @@ class PopoverViewController: UIViewController {
         //var dict:NSDictionary=Utility.composeJson()
         //var param:NSString="\(dict)"
         var param:NSString=Utility.composeJson()
-        println(param)
+        //println(param)
         //httpPost.post(param, url: Utility.serviceUrl)
         /*
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

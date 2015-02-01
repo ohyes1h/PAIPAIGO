@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2E8B08AD1A7DFC75004AA3E4 /* bg2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08AC1A7DFC75004AA3E4 /* bg2.jpg */; };
+		2E8B08AF1A7E0A34004AA3E4 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08AE1A7E0A34004AA3E4 /* AppIcon.png */; };
+		2E8B08B31A7E0B0D004AA3E4 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08B01A7E0B0D004AA3E4 /* icon29.png */; };
+		2E8B08B41A7E0B0D004AA3E4 /* icon40.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08B11A7E0B0D004AA3E4 /* icon40.png */; };
+		2E8B08B51A7E0B0D004AA3E4 /* icon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08B21A7E0B0D004AA3E4 /* icon60.png */; };
+		2E8B08B71A7E0B95004AA3E4 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08B61A7E0B95004AA3E4 /* icon152.png */; };
+		2E8B08C11A7E125A004AA3E4 /* app58.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08BE1A7E125A004AA3E4 /* app58.png */; };
+		2E8B08C21A7E125A004AA3E4 /* app80.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08BF1A7E125A004AA3E4 /* app80.png */; };
+		2E8B08C31A7E125A004AA3E4 /* app152.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8B08C01A7E125A004AA3E4 /* app152.png */; };
 		2EE8BB581A7CCFD300FD78E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8BB571A7CCFD300FD78E6 /* AppDelegate.swift */; };
 		2EE8BB5A1A7CCFD300FD78E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8BB591A7CCFD300FD78E6 /* ViewController.swift */; };
 		2EE8BB5D1A7CCFD300FD78E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EE8BB5B1A7CCFD300FD78E6 /* Main.storyboard */; };
@@ -42,6 +50,14 @@
 		096B6CB8CE11C15419ACC4E9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E8B08AB1A7D8E99004AA3E4 /* Hackathon-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hackathon-Bridging-Header.h"; sourceTree = "<group>"; };
 		2E8B08AC1A7DFC75004AA3E4 /* bg2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg2.jpg; sourceTree = "<group>"; };
+		2E8B08AE1A7E0A34004AA3E4 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		2E8B08B01A7E0B0D004AA3E4 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29.png; sourceTree = "<group>"; };
+		2E8B08B11A7E0B0D004AA3E4 /* icon40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon40.png; sourceTree = "<group>"; };
+		2E8B08B21A7E0B0D004AA3E4 /* icon60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon60.png; sourceTree = "<group>"; };
+		2E8B08B61A7E0B95004AA3E4 /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152.png; sourceTree = "<group>"; };
+		2E8B08BE1A7E125A004AA3E4 /* app58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app58.png; sourceTree = "<group>"; };
+		2E8B08BF1A7E125A004AA3E4 /* app80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app80.png; sourceTree = "<group>"; };
+		2E8B08C01A7E125A004AA3E4 /* app152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app152.png; sourceTree = "<group>"; };
 		2EE8BB521A7CCFD300FD78E6 /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EE8BB561A7CCFD300FD78E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EE8BB571A7CCFD300FD78E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +145,14 @@
 			isa = PBXGroup;
 			children = (
 				2EE8BB771A7CDA4D00FD78E6 /* camera32.png */,
+				2E8B08AE1A7E0A34004AA3E4 /* AppIcon.png */,
+				2E8B08B01A7E0B0D004AA3E4 /* icon29.png */,
+				2E8B08B11A7E0B0D004AA3E4 /* icon40.png */,
+				2E8B08B61A7E0B95004AA3E4 /* icon152.png */,
+				2E8B08BE1A7E125A004AA3E4 /* app58.png */,
+				2E8B08BF1A7E125A004AA3E4 /* app80.png */,
+				2E8B08C01A7E125A004AA3E4 /* app152.png */,
+				2E8B08B21A7E0B0D004AA3E4 /* icon60.png */,
 				2EE8BB7B1A7CE2A100FD78E6 /* album64.png */,
 				2E8B08AC1A7DFC75004AA3E4 /* bg2.jpg */,
 				2EE8BB7D1A7CE3AE00FD78E6 /* a64.png */,
@@ -259,15 +283,23 @@
 			files = (
 				2EE8BB841A7CEC8700FD78E6 /* u64.png in Resources */,
 				2EE8BB5D1A7CCFD300FD78E6 /* Main.storyboard in Resources */,
+				2E8B08C11A7E125A004AA3E4 /* app58.png in Resources */,
 				2EE8BB7A1A7CDA4D00FD78E6 /* camera64.png in Resources */,
 				2EE8BB791A7CDA4D00FD78E6 /* camera32.png in Resources */,
 				2EE8BB7C1A7CE2A100FD78E6 /* album64.png in Resources */,
 				2EE8BB621A7CCFD300FD78E6 /* LaunchScreen.xib in Resources */,
+				2E8B08B41A7E0B0D004AA3E4 /* icon40.png in Resources */,
 				2E8B08AD1A7DFC75004AA3E4 /* bg2.jpg in Resources */,
+				2E8B08B31A7E0B0D004AA3E4 /* icon29.png in Resources */,
+				2E8B08B51A7E0B0D004AA3E4 /* icon60.png in Resources */,
 				2EE8BB881A7D291600FD78E6 /* UploadInfoStoryboard.storyboard in Resources */,
+				2E8B08AF1A7E0A34004AA3E4 /* AppIcon.png in Resources */,
+				2E8B08C21A7E125A004AA3E4 /* app80.png in Resources */,
 				2EE8BB7F1A7CE3AE00FD78E6 /* a64.png in Resources */,
 				2EE8BB5F1A7CCFD300FD78E6 /* Images.xcassets in Resources */,
 				2EE8BB801A7CE3AE00FD78E6 /* c64.png in Resources */,
+				2E8B08B71A7E0B95004AA3E4 /* icon152.png in Resources */,
+				2E8B08C31A7E125A004AA3E4 /* app152.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
